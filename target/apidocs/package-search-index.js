@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"fr.invoiceiq.sdk"},{"l":"fr.invoiceiq.sdk.client"},{"l":"fr.invoiceiq.sdk.config"},{"l":"fr.invoiceiq.sdk.exceptions"},{"l":"fr.invoiceiq.sdk.models"}];updateSearchResults();

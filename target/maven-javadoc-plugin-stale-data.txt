@@ -1,0 +1,63 @@
+@options
+@packages
+-classpath
+'C:/Users/teren/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar;C:/Users/teren/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar;C:/Users/teren/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar;C:/Users/teren/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar;C:/Users/teren/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar;C:/Users/teren/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar;C:/Users/teren/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar;C:/Users/teren/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar;C:/Users/teren/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar;C:/Users/teren/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'11'
+-sourcepath
+'E:/Workspace/invoiceiq-sdk-java/src/main/java;E:/Workspace/invoiceiq-sdk-java/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2026. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'E:/Workspace/invoiceiq-sdk-java/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'InvoiceIQ Java SDK 0.1.0 API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/11/docs/api' 'E:/Workspace/invoiceiq-sdk-java/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'InvoiceIQ Java SDK 0.1.0 API'
+fr.invoiceiq.sdk.client
+fr.invoiceiq.sdk.config
+fr.invoiceiq.sdk.exceptions
+fr.invoiceiq.sdk
+fr.invoiceiq.sdk.models
+C:\Users\teren\.m2\repository\com\squareup\okhttp3\okhttp\4.12.0\okhttp-4.12.0.jar = 1771251825932
+C:\Users\teren\.m2\repository\com\squareup\okio\okio\3.6.0\okio-3.6.0.jar = 1771251825917
+C:\Users\teren\.m2\repository\com\squareup\okio\okio-jvm\3.6.0\okio-jvm-3.6.0.jar = 1771251825934
+C:\Users\teren\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-common\1.9.10\kotlin-stdlib-common-1.9.10.jar = 1771850671175
+C:\Users\teren\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk8\1.8.21\kotlin-stdlib-jdk8-1.8.21.jar = 1771850671229
+C:\Users\teren\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.8.21\kotlin-stdlib-1.8.21.jar = 1771850671237
+C:\Users\teren\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar = 1739478028000
+C:\Users\teren\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk7\1.8.21\kotlin-stdlib-jdk7-1.8.21.jar = 1771850671238
+C:\Users\teren\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar = 1771251825783
+C:\Users\teren\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar = 1771251825479
+E:\Workspace\invoiceiq-sdk-java\src\main\java = 1771850234869
+E:\Workspace\invoiceiq-sdk-java\target\generated-sources\annotations = 1771852606749
+E:\Workspace\invoiceiq-sdk-java\target\apidocs\allclasses-index.html = 1771852612231
+E:\Workspace\invoiceiq-sdk-java\target\apidocs\allpackages-index.html = 1771852612234
+E:\Workspace\invoiceiq-sdk-java\target\apidocs\element-list = 1771852611991
+E:\Workspace\invoiceiq-sdk-java\target\apidocs\help-doc.html = 1771852612274
+E:\Workspace\invoiceiq-sdk-java\target\apidocs\index-all.html = 1771852612264
+E:\Workspace\invoiceiq-sdk-java\target\apidocs\index.html = 1771852612191
+E:\Workspace\invoiceiq-sdk-java\target\apidocs\jquery-ui.overrides.css = 1771852612282
+E:\Workspace\invoiceiq-sdk-java\target\apidocs\member-search-index.js = 1771852612238
+E:\Workspace\invoiceiq-sdk-java\target\apidocs\module-search-index.js = 1771852612235
+E:\Workspace\invoiceiq-sdk-java\target\apidocs\overview-summary.html = 1771852612267
+E:\Workspace\invoiceiq-sdk-java\target\apidocs\overview-tree.html = 1771852612182
+E:\Workspace\invoiceiq-sdk-java\target\apidocs\package-search-index.js = 1771852612236
+E:\Workspace\invoiceiq-sdk-java\target\apidocs\script.js = 1771852612277
+E:\Workspace\invoiceiq-sdk-java\target\apidocs\search.js = 1771852612278
+E:\Workspace\invoiceiq-sdk-java\target\apidocs\serialized-form.html = 1771852612061
+E:\Workspace\invoiceiq-sdk-java\target\apidocs\stylesheet.css = 1771852612276
+E:\Workspace\invoiceiq-sdk-java\target\apidocs\tag-search-index.js = 1771852612239
+E:\Workspace\invoiceiq-sdk-java\target\apidocs\type-search-index.js = 1771852612237

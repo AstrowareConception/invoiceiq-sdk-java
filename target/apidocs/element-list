@@ -1,0 +1,5 @@
+fr.invoiceiq.sdk
+fr.invoiceiq.sdk.client
+fr.invoiceiq.sdk.config
+fr.invoiceiq.sdk.exceptions
+fr.invoiceiq.sdk.models
