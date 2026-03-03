@@ -18,12 +18,12 @@ public class TransformationExample {
                 .build();
 
         try {
-            // Création des données de facture
-            Invoice invoice = createInvoiceData();
+            // Création des métadonnées de transformation
+            TransformationMetadata metadata = createTransformationMetadata();
 
             // Transformation du PDF
             File sourcePdf = new File("path/to/source.pdf");
-            Job job = client.transformation().transform(sourcePdf, invoice);
+            Job job = client.transformation().transform(sourcePdf, metadata);
 
             System.out.println("Transformation job created: " + job.getId());
             System.out.println("Status: " + job.getStatus());
@@ -66,8 +66,8 @@ public class TransformationExample {
         }
     }
 
-    private static Invoice createInvoiceData() {
-        return Invoice.builder()
+    private static TransformationMetadata createTransformationMetadata() {
+        return TransformationMetadata.builder()
                 .invoiceNumber("INV-2024-001")
                 .issueDate("2024-02-22")
                 .currency("EUR")
@@ -76,27 +76,33 @@ public class TransformationExample {
                         .registrationId("12345678900012")
                         .vatId("FR12123456789")
                         .countryCode("FR")
-                        .addressLine1("10 Rue de la Paix")
-                        .city("Paris")
-                        .postCode("75001")
+                        .address(Address.builder()
+                                .line1("10 Rue de la Paix")
+                                .city("Paris")
+                                .postCode("75001")
+                                .countryCode("FR")
+                                .build())
                         .build())
                 .buyer(Party.builder()
                         .name("Customer Company")
                         .countryCode("FR")
-                        .addressLine1("5 Avenue des Champs")
-                        .city("Paris")
-                        .postCode("75008")
+                        .address(Address.builder()
+                                .line1("5 Avenue des Champs")
+                                .city("Paris")
+                                .postCode("75008")
+                                .countryCode("FR")
+                                .build())
                         .build())
-                .addLine(InvoiceLine.builder()
+                .addLine(TransformationInvoiceLine.builder()
                         .id("1")
                         .name("Consulting Service")
                         .quantity(5)
                         .unitCode("HUR")
-                        .unitPrice(100.00)
+                        .netPrice(100.00)
                         .taxRate(20.00)
                         .totalAmount(500.00)
                         .build())
-                .addTax(TaxSummary.builder()
+                .addTax(TransformationTaxSummary.builder()
                         .taxRate(20.00)
                         .basisAmount(500.00)
                         .taxAmount(100.00)

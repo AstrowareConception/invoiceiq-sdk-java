@@ -18,11 +18,11 @@ public class GenerationExample {
                 .build();
 
         try {
-            // Création d'une facture complète avec options de rendu
-            Invoice invoice = createFullInvoice();
+            // Création d'un payload de génération complet avec options de rendu
+            GenerationPayload payload = createGenerationPayload();
 
             // Génération de la facture Factur-X
-            Job job = client.generation().generate(invoice);
+            Job job = client.generation().generate(payload);
 
             System.out.println("Generation job created: " + job.getId());
             System.out.println("Status: " + job.getStatus());
@@ -59,13 +59,14 @@ public class GenerationExample {
         }
     }
 
-    private static Invoice createFullInvoice() {
-        return Invoice.builder()
+    private static GenerationPayload createGenerationPayload() {
+        return GenerationPayload.builder()
                 .invoiceNumber("F-2024-00125")
                 .issueDate("2024-02-15")
                 .dueDate("2024-03-15")
                 .currency("EUR")
-                .seller(Party.builder()
+                .templateId("classic-01")
+                .seller(PartyDetail.builder()
                         .name("CloudLabs Infrastructure SAS")
                         .registrationId("98765432100012")
                         .vatId("FR987654321")
@@ -76,7 +77,7 @@ public class GenerationExample {
                         .city("Paris")
                         .email("billing@cloudlabs.io")
                         .build())
-                .buyer(Party.builder()
+                .buyer(PartyDetail.builder()
                         .name("Global Soft Corp")
                         .registrationId("12345678900056")
                         .vatId("FR123456789")
@@ -86,7 +87,7 @@ public class GenerationExample {
                         .city("Cannes")
                         .email("finance@globalsoft.com")
                         .build())
-                .addLine(InvoiceLine.builder()
+                .addLine(GenerationInvoiceLine.builder()
                         .id("1")
                         .name("Abonnement Premium SaaS - Annuel")
                         .description("Accès plateforme CloudLabs pour 25 utilisateurs (Période: Mars 2024 - Février 2025)")
@@ -96,7 +97,7 @@ public class GenerationExample {
                         .taxRate(20.0)
                         .totalAmount(4500.00)
                         .build())
-                .addLine(InvoiceLine.builder()
+                .addLine(GenerationInvoiceLine.builder()
                         .id("2")
                         .name("Crédits API Supplémentaires")
                         .description("Pack de 10 000 appels API valables 1 an")
@@ -106,7 +107,7 @@ public class GenerationExample {
                         .taxRate(20.0)
                         .totalAmount(500.00)
                         .build())
-                .addLine(InvoiceLine.builder()
+                .addLine(GenerationInvoiceLine.builder()
                         .id("3")
                         .name("Consulting Architecture Cloud")
                         .description("Audit de performance infrastructure (3 jours)")
@@ -116,7 +117,7 @@ public class GenerationExample {
                         .taxRate(20.0)
                         .totalAmount(2850.00)
                         .build())
-                .addTax(TaxSummary.builder()
+                .addTaxSummary(GenerationTaxSummary.builder()
                         .taxRate(20.0)
                         .taxableAmount(7850.00)
                         .taxAmount(1570.00)

@@ -2,7 +2,7 @@ package fr.invoiceiq.sdk.client;
 
 import fr.invoiceiq.sdk.config.InvoiceIQConfig;
 import fr.invoiceiq.sdk.exceptions.InvoiceIQException;
-import fr.invoiceiq.sdk.models.Invoice;
+import fr.invoiceiq.sdk.models.GenerationPayload;
 import fr.invoiceiq.sdk.models.Job;
 import fr.invoiceiq.sdk.models.TransformationReport;
 import okhttp3.*;
@@ -28,15 +28,15 @@ public class GenerationClient extends BaseHttpClient {
      * Génère une facture Factur-X complète à partir d'un JSON.
      * Coût: 10 crédits.
      *
-     * @param invoiceData    Les données de la facture
+     * @param payload        Les données de génération
      * @param idempotencyKey Clé d'idempotence optionnelle
      * @return Le job de génération
      * @throws InvoiceIQException En cas d'erreur
      */
-    public Job generate(Invoice invoiceData, String idempotencyKey) throws InvoiceIQException {
+    public Job generate(GenerationPayload payload, String idempotencyKey) throws InvoiceIQException {
         String url = config.getBaseUrl() + "/api/v1/generations";
 
-        String jsonBody = toJson(invoiceData);
+        String jsonBody = toJson(payload);
         RequestBody requestBody = RequestBody.create(jsonBody, JSON);
 
         Request.Builder requestBuilder = buildRequest(url)
@@ -59,12 +59,12 @@ public class GenerationClient extends BaseHttpClient {
     /**
      * Génère une facture Factur-X complète à partir d'un JSON.
      *
-     * @param invoiceData Les données de la facture
+     * @param payload Les données de génération
      * @return Le job de génération
      * @throws InvoiceIQException En cas d'erreur
      */
-    public Job generate(Invoice invoiceData) throws InvoiceIQException {
-        return generate(invoiceData, null);
+    public Job generate(GenerationPayload payload) throws InvoiceIQException {
+        return generate(payload, null);
     }
 
     /**

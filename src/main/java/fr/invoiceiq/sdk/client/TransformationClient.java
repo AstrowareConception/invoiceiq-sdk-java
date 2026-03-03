@@ -2,8 +2,8 @@ package fr.invoiceiq.sdk.client;
 
 import fr.invoiceiq.sdk.config.InvoiceIQConfig;
 import fr.invoiceiq.sdk.exceptions.InvoiceIQException;
-import fr.invoiceiq.sdk.models.Invoice;
 import fr.invoiceiq.sdk.models.Job;
+import fr.invoiceiq.sdk.models.TransformationMetadata;
 import fr.invoiceiq.sdk.models.TransformationReport;
 import okhttp3.*;
 
@@ -27,16 +27,16 @@ public class TransformationClient extends BaseHttpClient {
      * Coût: 5 crédits.
      *
      * @param pdfFile        Le fichier PDF source
-     * @param invoiceData    Les données de la facture
+     * @param metadata       Les métadonnées de la facture
      * @param idempotencyKey Clé d'idempotence optionnelle
      * @return Le job de transformation
      * @throws InvoiceIQException En cas d'erreur
      */
-    public Job transform(File pdfFile, Invoice invoiceData, String idempotencyKey) throws InvoiceIQException {
+    public Job transform(File pdfFile, TransformationMetadata metadata, String idempotencyKey) throws InvoiceIQException {
         String url = config.getBaseUrl() + "/api/v1/transformations";
 
         RequestBody fileBody = RequestBody.create(pdfFile, MediaType.parse("application/pdf"));
-        String metadataJson = toJson(invoiceData);
+        String metadataJson = toJson(metadata);
 
         MultipartBody.Builder bodyBuilder = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)
@@ -63,13 +63,13 @@ public class TransformationClient extends BaseHttpClient {
     /**
      * Transforme un PDF simple en Factur-X.
      *
-     * @param pdfFile     Le fichier PDF source
-     * @param invoiceData Les données de la facture
+     * @param pdfFile  Le fichier PDF source
+     * @param metadata Les métadonnées de la facture
      * @return Le job de transformation
      * @throws InvoiceIQException En cas d'erreur
      */
-    public Job transform(File pdfFile, Invoice invoiceData) throws InvoiceIQException {
-        return transform(pdfFile, invoiceData, null);
+    public Job transform(File pdfFile, TransformationMetadata metadata) throws InvoiceIQException {
+        return transform(pdfFile, metadata, null);
     }
 
     /**
